@@ -5,6 +5,7 @@ import { exec } from 'child_process'
 import { startWebsocketServer } from './utils/websocket'
 import { validateDatabase } from './utils/database'
 import { checkADB } from './utils/adbutils'
+import * as adb from './utils/adb'
 
 const app = fastify({
 });
@@ -21,7 +22,10 @@ app.listen({ port: 3000, host: '0.0.0.0' }, async (err, address) => {
     await validateDatabase()
     await startWebsocketServer()
     openLink('http://localhost:3000');
-    await checkADB()    
+    await checkADB();
+    await adb.startADB();
+    const devices = await adb.getDevices();
+    console.log(devices);
 })
 
 
