@@ -44,7 +44,8 @@ function parseAdbDevices(output: string) {
 
     lines.forEach(line => {
         if (line.trim() !== '') {
-            const [serial, status] = line.split('\t');
+            let [serial, status] = line.split('\t');
+            status = status.replace('\r', '');
             devices.push({ serial, status });
         }
     });

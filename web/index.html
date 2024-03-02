@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Neon</title>
+    <link rel="stylesheet" href="/styles/index.css">
+    <link rel="stylesheet" href="/styles/hmd.css">
 </head>
 <body>
-    
+
+    <section class="hmd">
+        <h1>Please Connect your Quest via an usb cable to your PC. Make sure that developer Mode is enabled.</h1>
+        <h1>Select youre Quest down below. If you have multiple android devices, disconnect them as they will interfere!</h1>
+        <h1>If no device is showing up, reconnect your quest or try restarting the program and your pc</h1>
+
+        <table id="hmd_table">
+            <tr>
+                <th>Serial</th>
+                <th>State</th>
+            </tr>
+        </table>
+    </section>
+
+
+    <script src="/scripts/index.js"></script>
+    <script src="/scripts/deviceLoader.js"></script>
 </body>
 </html>

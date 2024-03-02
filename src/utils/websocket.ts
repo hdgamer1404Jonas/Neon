@@ -3,11 +3,12 @@ import ws from 'ws';
 let server: ws.Server;
 
 export function startWebsocketServer() {
-    server = new ws.Server({ noServer: true });
+    server = new ws.Server({ port: 3001 });
     
     console.log('Websocket server started');
 
     server.on('connection', (socket) => {
+        console.log('Frontend connected');
         socket.on('message', (message) => {
             console.log('received: %s', message);
         });
